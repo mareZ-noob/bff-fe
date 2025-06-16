@@ -11,18 +11,20 @@
     "paths": {
       "@/assets/*": ["./src/assets/*"],
       "@/common/*": ["./src/common/*"],
-      "@/components/*": ["./src/views/components/*"],
+      "@/components/*": ["./src/components/*"],
       "@/configs/*": ["./src/configs/*"],
       "@/contexts/*": ["./src/contexts/*"],
       "@/hooks/*": ["./src/hooks/*"],
       "@/interfaces/*": ["./src/interfaces/*"],
+      "@/layouts/*": ["./src/views/layouts/*"],
       "@/modules/*": ["./src/modules/*"],
+      "@/pages/*": ["./src/views/pages/*"],
       "@/routes/*": ["./src/routes/*"],
       "@/services/*": ["./src/services/*"],
       "@/styles/*": ["./src/styles/*"],
       "@/types/*": ["./src/types/*"],
       "@/utils/*": ["./src/utils/*"],
-      "@/views/*": ["./src/views/*"],
+      "@/views/*": ["./src/views/*"]
     }
   }
 }
