@@ -1,30 +1,49 @@
 export const Path = {
 	root: {
-		index: "/",
+		path: "/",
 	},
 	login: {
-		index: "/login",
+		path: "/login",
 	},
 	register: {
-		index: "/register",
+		path: "/register",
 	},
 	forgotPassword: {
-		index: "/forgot-password",
+		path: "/forgot-password",
 	},
 	resetPassword: {
-		index: "/reset-password",
+		path: "/reset-password",
 	},
 	about: {
-		index: "/about",
+		path: "/about",
 	},
 	forum: {
-		index: "/forum",
+		path: "/forum",
+	},
+	payment: {
+		path: "/payment",
+	},
+	vnpayPaymentSuccess: {
+		path: "/vn-pay/payment-success",
+	},
+	vnpayPaymentFail: {
+		path: "/vn-pay/payment-fail",
+	},
+	stripePaymentSuccess: {
+		path: "/stripe/payment-success",
+	},
+	stripePaymentFail: {
+		path: "/stripe/payment-cancel",
 	},
 	user: {
-		index: "/",
+		path: "/",
 		outlets: {
-			dashboard: "/dashboard",
-			profile: "/profile",
+			dashboard: {
+				path: "/dashboard",
+			},
+			profile: {
+				path: "/profile",
+			},
 		},
 	},
 };

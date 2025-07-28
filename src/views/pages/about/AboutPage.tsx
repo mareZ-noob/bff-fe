@@ -2,7 +2,7 @@ import React from "react";
 
 const AboutPage: React.FC = () => {
 	return (
-		<div className="bg-white py-16">
+		<div className="py-16">
 			<div className="container mx-auto px-6 text-gray-700">
 				<div className="max-w-4xl mx-auto">
 					<h1 className="text-4xl font-bold text-center text-gray-800 mb-8">

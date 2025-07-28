@@ -1,11 +1,11 @@
+import React from "react";
 import ReactQuill from "react-quill-new";
 import "react-quill-new/dist/quill.snow.css";
-import React from "react";
 
 export interface TextEditorProps {
 	field: string;
 	labelText: string;
-	defaultValue?: string;
+	value?: string;
 	error?: string;
 	setValue: (_value: string) => void;
 }
@@ -13,12 +13,40 @@ export interface TextEditorProps {
 const TextEditor: React.FC<TextEditorProps> = ({
 	field,
 	labelText,
-	defaultValue,
+	value,
 	error,
 	setValue,
 }) => {
 	const handleChangeValue = (value: string) => {
-		setValue(value);
+		if (value === "<p><br></p>") {
+			setValue("");
+		} else {
+			setValue(value);
+		}
+	};
+
+	const modules = {
+		toolbar: [
+			[{ header: [1, 2, 3, false] }],
+			[{ size: ["small", false, "large", "huge"] }],
+			[{ font: [] }],
+			[{ align: [] }],
+			["bold", "italic", "underline", "strike"],
+			["blockquote", "code-block"],
+			[{ list: "ordered" }, { list: "bullet" }],
+			["link", "image"],
+			["clean"],
+		],
+		keyboard: {
+			bindings: {
+				customEnterBinding: {
+					key: 13,
+					handler: (range, context) => {
+						return true;
+					}
+				}
+			}
+		}
 	};
 
 	return (
@@ -29,8 +57,9 @@ const TextEditor: React.FC<TextEditorProps> = ({
 			<ReactQuill
 				theme="snow"
 				className="text-editor"
-				defaultValue={defaultValue}
+				value={value}
 				onChange={handleChangeValue}
+				modules={modules}
 			/>
 			<p className="error-field mt-1">{error}</p>
 		</div>

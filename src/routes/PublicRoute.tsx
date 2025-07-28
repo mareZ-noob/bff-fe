@@ -15,7 +15,7 @@ const PublicRoute: React.FC = () => {
 	}
 
 	return isAuthenticated ? (
-		<Navigate to={Path.user.outlets.dashboard} replace />
+		<Navigate to={Path.user.outlets.dashboard.path} replace />
 	) : (
 		<Outlet />
 	);

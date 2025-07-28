@@ -16,13 +16,13 @@ const WelcomePage: React.FC = () => {
 				</p>
 				<div className="mt-10 flex justify-center gap-4">
 					<Link
-						to={Path.login.index}
+						to={Path.login.path}
 						className="px-8 py-3 bg-blue-600 text-white font-semibold rounded-lg shadow-lg hover:bg-blue-700 transition-transform transform hover:scale-105"
 					>
 						Get Started
 					</Link>
 					<Link
-						to={Path.about.index}
+						to={Path.about.path}
 						className="px-8 py-3 bg-gray-200 text-gray-800 font-semibold rounded-lg shadow-lg hover:bg-gray-300 transition-transform transform hover:scale-105"
 					>
 						Learn More

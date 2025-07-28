@@ -17,7 +17,7 @@ const ProtectedRoute: React.FC = () => {
 	return isAuthenticated ? (
 		<Outlet />
 	) : (
-		<Navigate to={Path.login.index} replace />
+		<Navigate to={Path.login.path} replace />
 	);
 };
 

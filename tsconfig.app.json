@@ -33,6 +33,7 @@
       "@/hooks/*": ["./src/hooks/*"],
       "@/interfaces/*": ["./src/interfaces/*"],
       "@/layouts/*": ["./src/views/layouts/*"],
+      "@/locales/*": ["./src/locales/*"],
       "@/modules/*": ["./src/modules/*"],
       "@/pages/*": ["./src/views/pages/*"],
       "@/routes/*": ["./src/routes/*"],

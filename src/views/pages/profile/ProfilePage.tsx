@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { User, Mail, ShieldCheck, AlertTriangle, Loader2 } from "lucide-react";
 
-// This interface matches the CustomerVm record from your Spring Boot backend
-interface CustomerProfile {
+// This interface matches the UserVm record from your Spring Boot backend
+interface UserProfile {
 	id: string;
 	username: string;
 	email: string;
@@ -11,7 +11,7 @@ interface CustomerProfile {
 }
 
 const ProfilePage: React.FC = () => {
-	const [profile, setProfile] = useState<CustomerProfile | null>(null);
+	const [profile, setProfile] = useState<UserProfile | null>(null);
 	const [isLoading, setIsLoading] = useState<boolean>(true);
 	const [error, setError] = useState<string | null>(null);
 
@@ -19,12 +19,15 @@ const ProfilePage: React.FC = () => {
 		const fetchProfile = async () => {
 			try {
 				// This endpoint is automatically proxied by Vite to your BFF
-				const response = await fetch("/api/customer/customer/profile", {
-					credentials: "include", // Important for sending session cookies
+				const response = await fetch("/api/user/users/profile", {
+					credentials: "include",
+					headers: {
+						"X-API-Version": "v1",
+					},
 				});
 
 				if (response.ok) {
-					const data: CustomerProfile = await response.json();
+					const data: UserProfile = await response.json();
 					setProfile(data);
 				} else if (response.status === 403) {
 					setError(

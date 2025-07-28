@@ -11,7 +11,7 @@ const Footer: React.FC = () => {
 				</p>
 				<div className="flex space-x-6 mt-4 md:mt-0">
 					<Link
-						to={Path.about.index}
+						to={Path.about.path}
 						className="text-gray-600 hover:text-blue-600 text-sm"
 					>
 						About Us
